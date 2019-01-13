@@ -77,7 +77,8 @@ socket.on('newLocationMessage',function(message)
   {
       e.preventDefault();
       socket.emit('createMessage',{
-          from:'user',
+          from:message.from,
+         
           text: jQuery('[name=message]').val()
       },function()
       {

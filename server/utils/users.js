@@ -10,21 +10,18 @@ class User
         this.users.push(user);
 
     }
-    removeUser(id)
-    {
-        var users=this.getUser(id);
-        if(users)
-        {
-            this.users.filter((x)=>x.id!=id)
+    removeUser (id) {
+        var user = this.getUser(id);
+    
+        if (user) {
+          this.users = this.users.filter((user) => user.id !== id);
         }
-        return users;
-    }
-    getUser(id)
-    {
-            var users=this.users.filter((user)=>user.id===id);
-            var idArray=users.map((x)=>x.id);
-            return idArray;
-    }
+    
+        return user;
+      }
+      getUser (id) {
+        return this.users.filter((user) => user.id === id)[0]
+      }
     getUserList(room)
     {
         var users=this.users.filter((user)=>user.room===room);
